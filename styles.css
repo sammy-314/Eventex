@@ -1,0 +1,202 @@
+/* Enhanced styles with animations for dynamic look */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #E0E5EC; /* Light blue */
+  color: #333; /* Dark gray */
+}
+
+header {
+  background: linear-gradient(135deg, #4A90E2, #60C6E2); /* Gradient background */
+  color: #fff; /* White text */
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+nav {
+  background: linear-gradient(135deg, #60C6E2, #4A90E2); /* Gradient background */
+  padding: 10px 0;
+  animation: fadeInDown 0.5s ease;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333; /* Dark gray */
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #fff; /* White background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+nav ul li a:hover {
+  color: #fff; /* White text */
+  background: linear-gradient(135deg, #4A90E2, #60C6E2); /* Gradient background on hover */
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+section {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease;
+}
+
+section h2 {
+  color: #4A90E2; /* Blue color */
+  margin-top: 0;
+}
+
+button {
+  background: linear-gradient(135deg, #3498db, #2980b9); /* Gradient background */
+  color: #fff; /* White text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2980b9, #3498db); /* Gradient background on hover */
+  animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-5px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+footer {
+  background-color: #333; /* Dark gray background */
+  color: #fff; /* White text */
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Event styles */
+.event {
+  background-color: #fff; /* White background */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.event h3 {
+  color: #4A90E2; /* Blue color */
+}
+
+.event p {
+  margin: 5px 0;
+}
+
+/* Box styles for features */
+.feature-box {
+  background-color: #E0E5EC; /* Light blue background */
+  border: 1px solid #4A90E2; /* Blue border */
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+/* Additional styles for center alignment of content text */
+#about {
+  text-align: center;
+  padding: 20px;
+}
+
+#about h2 {
+  font-size: 36px; /* Larger font size for heading */
+  color: #ff6f61; /* Reddish color */
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 20px; /* Larger font size for paragraphs */
+  line-height: 1.6; /* Increased line height for better readability */
+  color: #333; /* Dark gray color */
+  margin-bottom: 10px;
+}
+
+#about ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#about li {
+  font-size: 20px; /* Larger font size for list items */
+  color: #333; /* Dark gray color */
+  margin-bottom: 10px;
+}
+
+#about li:before {
+  content: '\2022'; /* Bullet character */
+  color: #fc1500; /* Reddish color */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
