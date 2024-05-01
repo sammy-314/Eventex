@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventex - Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for center alignment of content text */
+        #events-section .event p {
+            text-align: center;
+        }
+
+        .book-slot-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .book-slot-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            showAllEvents();
+        }
+
+        var bookedEvents = [];
+
+        function showAllEvents() {
+            var eventsSection = document.getElementById("events-section");
+            var allEvents = [
+                {
+                    eventId: "E001",
+                    eventType: "Conference",
+                    eventName: "Tech Summit",
+                    budget: "$50,000",
+                    city: "San Francisco",
+                    title: "Technology Conference",
+                    eventVenue: "Convention Center A",
+                    startDate: "2024-05-15",
+                    endDate: "2024-05-17"
+                },
+                {
+                    eventId: "E002",
+                    eventType: "Workshop",
+                    eventName: "Marketing Workshop",
+                    budget: "$10,000",
+                    city: "New York",
+                    title: "Digital Marketing Workshop",
+                    eventVenue: "Workshop Space B",
+                    startDate: "2024-06-20",
+                    endDate: "2024-06-21"
+                },
+                {
+                    eventId: "E003",
+                    eventType: "Seminar",
+                    eventName: "Leadership Seminar",
+                    budget: "$15,000",
+                    city: "Chicago",
+                    title: "Executive Leadership Seminar",
+                    eventVenue: "Seminar Hall C",
+                    startDate: "2024-07-10",
+                    endDate: "2024-07-11"
+                },
+                {
+                    eventId: "E004",
+                    eventType: "Exhibition",
+                    eventName: "Art Exhibition",
+                    budget: "$20,000",
+                    city: "London",
+                    title: "Contemporary Art Exhibition",
+                    eventVenue: "Art Gallery X",
+                    startDate: "2024-08-25",
+                    endDate: "2024-08-27"
+                },
+                {
+                    eventId: "E005",
+                    eventType: "Seminar",
+                    eventName: "Finance Seminar",
+                    budget: "$12,000",
+                    city: "Tokyo",
+                    title: "Financial Planning Seminar",
+                    eventVenue: "Conference Center Y",
+                    startDate: "2024-09-10",
+                    endDate: "2024-09-12"
+                }
+            ];
+
+            var eventDetailsHTML = "";
+            allEvents.forEach(function(event) {
+                eventDetailsHTML += `
+                    <div class="event" id="${event.eventId}">
+                        <h3>Event ID: ${event.eventId}</h3>
+                        <p>Event Type: ${event.eventType}</p>
+                        <p>Event Name: ${event.eventName}</p>
+                        <p>Budget: ${event.budget}</p>
+                        <p>City: ${event.city}</p>
+                        <p>Title: ${event.title}</p>
+                        <p>Event Venue: ${event.eventVenue}</p>
+                        <p>Start Date: ${event.startDate}</p>
+                        <p>End Date: ${event.endDate}</p>
+                        <button class="book-slot-button" onclick="bookSlot('${event.eventId}')">Book Slot</button>
+                    </div>
+                `;
+            });
+
+            eventsSection.innerHTML = eventDetailsHTML;
+        }
+
+        function bookSlot(eventId) {
+            if (bookedEvents.includes(eventId)) {
+                alert("You have already booked a slot for this event.");
+            } else {
+                bookedEvents.push(eventId);
+                alert("Slot booked for Event ID: " + eventId);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Eventex - Events</h1>
+    </header>
+
+    <section id="events-section">
+        <!-- Event details will be displayed here -->
+    </section>
+
+</body>
+</html>
